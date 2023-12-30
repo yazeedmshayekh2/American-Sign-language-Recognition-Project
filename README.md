@@ -32,32 +32,37 @@ This man helps me alot: https://www.kaggle.com/competitions/asl-fingerspelling/d
 
 #Our Solutions
 
-**There are two approaches that I tried to solve this Problem:**
+**There are two approaches that I tried to solve this Problem, Note: I used TensorFlow library for building these two architectures:**
 
 # First One
 
 The processing is as follows:
 
-1) Select dominant hand based on most number of non empty hand frames
+1) Select dominant hand based on most number of non empty hand frames.
 
-2) Filter out all frames with missing dominant hand coordinates
+2) Filter out all frames with missing dominant hand coordinates.
 
-3) Resize video to 256 frames
+3) Resize video to 256 frames.
 
-4) Excluding samples with low frames per character ratio
+4) Excluding samples with low frames per character ratio.
 
-5) Added phrase type
+5) Added phrase type.
 
-Tranformer Model (Embedding+ Landmark Embedding+ Encoder(2 Encoder Blocks)+ Decoder(2 Decoder Blocks)+ 4 Attention Heads in Encoder and Decoder), without Data Augmentation, Lips/Right_HAND/Left_HAND landmarkes, Preprocessing (Fill Nan with zeroes/ Filtering Empty Hand Frames)
-
-
+Tranformer Model 4.887.936 Million Parameters(Embedding+ Landmark Embedding+ Encoder(2 Encoder Blocks)+ Decoder(2 Decoder Blocks)+ 4 Attention Heads in Encoder and Decoder), without Data Augmentation, Lips/Right_HAND/Left_HAND landmarkes, Preprocessing (Fill Nan with zeroes/ Filtering Empty Hand Frames)), 100 Epochs, POD/SOS/EOS Tokens Used, 64 Batch Size, learning rate= 0.001, Weight Decay Ratio = 0.05, Maximum Phrase length 31+1 EOS Token, Number of Frames to resize recording to = 128.
 
 **Transformer Architecture**
 
 ![Tranformer](TRANFORMERARCHITECTURE.png)
 
-**MY Transformer Architecture On the Code**
+**My Transformer Architecture On the Code**
 ![Tranformer Architecture](model.png)
+
+# Second One
+
+The model consists of a Lankmark Embbeding + Conformer.
+
+Data Augmentation was applied.
+
 
 
 
