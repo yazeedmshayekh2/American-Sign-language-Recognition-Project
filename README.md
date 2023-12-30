@@ -4,7 +4,7 @@ Since Our Problem is to translate videos (sequence of frames) into sentences (se
 
 **Sign Language Translation**
 
-![Sign-language-Translation](ASL*TRANSLATION.png)
+![Sign-language-Translation](ASLTRANSLATION.png)
 
 Inference is performed by starting with an SOS token and predicting one character at a time using the previous prediction.
 
