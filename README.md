@@ -51,7 +51,7 @@ The processing is as follows:
 
 4) Excluding samples with low frames per character ratio.
 
-5) Added phrase type.
+5) Added phrase type(Phone Number, URL, Address).
 
 ## General Info about the First solution
 
