@@ -1,6 +1,6 @@
 # American-Sign-language-Translation-Into-Text-Project
 
-Since Our Problem is to translate videos (sequence of frames) into sentences (sequence of words and characters), which is a seq2seq problem, so we have to use a state-of-art models like tranformers [a link](https://arxiv.org/abs/1706.03762) which is much better than LSTM[a link](https://arxiv.org/abs/1909.09586), CRNN [a link](https://arxiv.org/abs/1909.09586), or RNN
+Since Our Problem is to translate videos (sequence of frames) into sentences (sequence of words and characters), which is a seq2seq problem, so we have to use a state-of-art models like [Transformers](https://arxiv.org/abs/1706.03762) which is much better than [LSTM](https://arxiv.org/abs/1909.09586), [CRNN](https://arxiv.org/abs/1909.09586), or [RNN](https://arxiv.org/abs/1808.03314)
 
 Inference is performed by starting with an SOS token and predicting one character at a time using the previous prediction.
 
