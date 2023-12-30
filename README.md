@@ -94,13 +94,37 @@ if TPU:
 BATCH_SIZE = 25 * strategy.num_replicas_in_sync
 print(BATCH_SIZE)
 
+# Data Augmentation and Preprocessing 
+Data Augmentation and Preprocessing was applied as follows:
+## Preprocessing
+1) Padding(short sequences), Resizing(longer sequences).
+2) Mean Calculation with Ignoring Handling.
+3) Standard Deviation Calculation with Ignoring NaN.
+4) Normalization(Standardization).
+5) Global Normalization(Standardization of the pose keypoints).
+6) Splitting, rearranging , resizing (lips, hands, nose, eyes, and pose).
+7) Interpolation(Resizes the sequence to a target length, Random interpolation).
 
-Data Augmentation was applied:
+## Augmentation
+1) Random Spatial Rotation (finger keypoints, degree(-10,10)).
+2) Random Scaling(scales finger keypoints, scale(0.9, 1.1)).
+3) Rotation, Shear, Scaling(degree=(-15,15), shear=(-0.10,0.10), scale=(0.75,1.5).
+4) Inner Flipping(around mean of coordinates).
+5) Left-Right Flipping(rigth, Left body like Left, Right hand and so on for each left, right data aspect).
+6) Random Rotation and Scaling(each finger individually).
+7) Temporal Resampling(resampling the temporal length of the data sequence at a new rate).
+8) Subsequence Resampling(resamples a subsection of the data sequence).
+9) Masking(learns the mode to handle incomplete data).
+10) Random Rotation and Scaling(for each finger individually).
+11) Spatial Masking(spatial mask to a random part of the data).
+12) Temporal Masking(Masks a random temporal segment of the data).
+13) Random Shifting(shift_range=0.1).
+14) Partial Rotation(Applies rotations to parts of the data or individual fingers, whole sequence or a subsection).
+15) Partial Shifting.
+16) Combined Masking(Combines temporal and feature masking in one step).
+17) Composite Augmentation(applying a random combination of augmentation techniques).
 
-
-
-
-Number of Epochs= 100, BATCH_SIZE = 64, Number of Unique Characters To Predict + Pad Token + SOS Token + EOS Token= 62, Maximum Learning Rate= 1e-3, weight decay ration for learning rate = 0.05, Maximum phrase length 31+1 Eos Token, Number of frames to resize recording to is 384, Drop out ration was 0.1, Causal Masking is applied, landmarks (Nose 4 landmarks, Lips 41 landmarks, Pose 17 landmark, Eyes 16(R)+16(L)=32 landmarks, Hands 42 landmarks) In Total 42+76+33 = 151 (HAND_NUMS 42, FACE_NUMS 76, POSE_NUMS 33).
+Number of Epochs= 100, BATCH_SIZE = 64, Number of Unique Characters To Predict + Pad Token + SOS Token + EOS Token= 62, Maximum Learning Rate= 1e-3, weight decay ration for learning rate = 0.05, Maximum phrase length 31+1 Eos Token, Number of frames to resize recording to is 384, Drop out ration was 0.1, Causal Masking is applied, landmarks (Nose 4 landmarks, Lips 41 landmarks, Pose 17 landmark, Eyes 16(R)+16(L)=32 landmarks, Hands 42 landmarks) In Total 42+76+33 = 151 (HAND_NUMS 42, FACE_NUMS 76, POSE_NUMS 33), X/Y/Z used that means we add the depth in this approach.
 
 
 
