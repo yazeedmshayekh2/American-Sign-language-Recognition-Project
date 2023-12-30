@@ -45,6 +45,8 @@ Tranformer Model (Embedding+ Landmark Embedding+ Encoder(2 Encoder Blocks)+ Deco
 
 **Transformer Architecture**
 
+![Tranformer](TRANFORMERARCHITECTURE.png)
+
 ![Tranformer Architecture](model.png)
 
 
