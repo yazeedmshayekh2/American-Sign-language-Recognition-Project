@@ -79,7 +79,7 @@ The Evaluation metrices used:
 
 You can Found more about monitoring the results on this file: [Monitoring_Project_Performance](Monitoring_Project_Performance.docx)
 
-You can Found more details about statistics about results that we got here: [Neptune.ai](https://app.neptune.ai/o/ASL-/org/ASL/runs/table?viewId=9aead532-6950-48b8-8705-bf902d065200)
+ASL-32 is the best and we got it using this architecture, you can Found more details about statistics about results that we got here: [Neptune.ai](https://app.neptune.ai/o/ASL-/org/ASL/runs/table?viewId=9aead532-6950-48b8-8705-bf902d065200)
 
 **Transformer Architecture**
 
