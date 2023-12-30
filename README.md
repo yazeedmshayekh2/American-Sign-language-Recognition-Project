@@ -10,7 +10,7 @@ Since Our Problem is to translate videos (sequence of frames) into sentences (se
 
 You Can find the data that I worked on here: [Data](https://www.kaggle.com/competitions/asl-fingerspelling/data)
 
-#Related Works
+# Related Works
 
 Inference is performed by starting with an SOS token and predicting one character at a time using the previous prediction.
 
@@ -30,7 +30,7 @@ https://www.kaggle.com/code/gusthema/asl-fingerspelling-recognition-w-tensorflow
 
 This man helps me alot: https://www.kaggle.com/competitions/asl-fingerspelling/discussion/411060
 
-#Our Solutions
+# Our Solutions
 
 **There are two approaches that I tried to solve this Problem, Note: I used TensorFlow library for building these two architectures:**
 
