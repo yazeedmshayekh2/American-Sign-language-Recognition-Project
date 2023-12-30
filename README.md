@@ -30,6 +30,9 @@ https://www.kaggle.com/code/gusthema/asl-fingerspelling-recognition-w-tensorflow
 
 This man helps me alot: https://www.kaggle.com/competitions/asl-fingerspelling/discussion/411060
 
+# MLOPS
+You can find my Neptune Project here: [Neptune.ai](https://app.neptune.ai/o/ASL-/org/ASL/runs/table?viewId=9aead532-6950-48b8-8705-bf902d065200)
+
 # Our Solutions
 
 **There are two approaches that I tried to solve this Problem, Note: I used TensorFlow library for building these two architectures:**
@@ -48,7 +51,25 @@ The processing is as follows:
 
 5) Added phrase type.
 
-Tranformer Model 4.887.936 Million Parameters(Embedding+ Landmark Embedding+ Encoder(2 Encoder Blocks)+ Decoder(2 Decoder Blocks)+ 4 Attention Heads in Encoder and Decoder), without Data Augmentation, Lips/Right_HAND/Left_HAND landmarkes, Preprocessing (Fill Nan with zeroes/ Filtering Empty Hand Frames)), 100 Epochs, POD/SOS/EOS Tokens Used, 64 Batch Size, learning rate= 0.001, Weight Decay Ratio = 0.05, Maximum Phrase length 31+1 EOS Token, Number of Frames to resize recording to = 128.
+Tranformer Model 4.887.936 Million Parameters(Embedding+ Landmark Embedding+ Encoder(2 Encoder Blocks)+ Decoder(2 Decoder Blocks)+ 4 Attention Heads in Encoder and Decoder+ Causal Attention Masking), without Data Augmentation, Lips/Right_HAND/Left_HAND landmarkes, X/Y only without z, Preprocessing (Fill Nan with zeroes/ Filtering Empty Hand Frames/ PAD to zeros/Downsampling resize image to 128)), 100 Epochs, POD/SOS/EOS Tokens Used, 64 Batch Size, learning rate= 0.001, Weight Decay Ratio = 0.05, Maximum Phrase length 31+1 EOS Token.
+
+The Evaluation metrices used:
+
+1) Levenshtein Distance:
+
+![Levenshtein Distance](LevenshteinDistance.png)
+
+![LevenshteinDistance(Mean)](LevenshteinDistance(Mean).png)
+
+2) Sparse Categorical Crossentropy With Label Smoothing:
+
+![LossHistory](LossHistory.png)
+
+3) Top1Accuray:
+![LossHistory](TOP1.png)
+
+4) Top5Accuray:
+![LossHistory](TOP5.png)
 
 **Transformer Architecture**
 
@@ -62,7 +83,6 @@ Tranformer Model 4.887.936 Million Parameters(Embedding+ Landmark Embedding+ Enc
 The model consists of a Lankmark Embbeding + Conformer.
 
 Data Augmentation was applied.
-
 
 
 
