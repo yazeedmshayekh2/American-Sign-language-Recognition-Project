@@ -88,11 +88,11 @@ The model consists of a Lankmark Embbeding + Conformer, 2 layer MLP landmark enc
 Total params: 15,892,142
 Trainable params: 15,868,334
 Non-trainable params: 23,808
-It tooks like 8 hours to train were the epochs was 100, I tried using Kaggle TPUs but it didn't so if you how to use them, Note: If the kaggle TPUs used the number of epochs will increase to 500 and the batch size will encrease as well using this piece of code:
-[
+It tooks like 8 hours to train were the epochs was 100, I tried using Kaggle TPUs but it didn't so if you how to use them, 
+**Note:** If the kaggle TPUs used the number of epochs will increase to 500 and the batch size will encrease as well using this piece of code: 
 if TPU:
-    BATCH_SIZE = 25 * strategy.num_replicas_in_sync
-    print(BATCH_SIZE)]
+BATCH_SIZE = 25 * strategy.num_replicas_in_sync
+print(BATCH_SIZE)
 
 
 Data Augmentation was applied:
