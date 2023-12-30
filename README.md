@@ -39,6 +39,8 @@ You can find my Neptune Project here: [Neptune.ai](https://app.neptune.ai/o/ASL-
 
 # First One
 
+## Preprocessing
+
 The processing is as follows:
 
 1) Select dominant hand based on most number of non empty hand frames.
@@ -51,7 +53,11 @@ The processing is as follows:
 
 5) Added phrase type.
 
+## General Info about the First solution
+
 Tranformer Model 4.887.936 Million Parameters(Embedding+ Landmark Embedding+ Encoder(2 Encoder Blocks)+ Decoder(2 Decoder Blocks)+ 4 Attention Heads in Encoder and Decoder+ Causal Attention Masking), without Data Augmentation, Lips/Right_HAND/Left_HAND landmarkes, X/Y only without z, Preprocessing (Fill Nan with zeroes/ Filtering Empty Hand Frames/ PAD to zeros/Downsampling resize image to 128)), 100 Epochs, POD/SOS/EOS Tokens Used, 64 Batch Size, learning rate= 0.001, Weight Decay Ratio = 0.05, Maximum Phrase length 31+1 EOS Token, splitting 10% of the data into val_dataset and the other is for training.
+
+## Evaluation
 
 The Evaluation metrices used:
 
@@ -124,10 +130,14 @@ Data Augmentation and Preprocessing was applied as follows:
 16) Combined Masking(Combines temporal and feature masking in one step).
 17) Composite Augmentation(applying a random combination of augmentation techniques).
 
+## General Info about the Second solution
+
 Number of Epochs= 100, BATCH_SIZE = 64, Number of Unique Characters To Predict + Pad Token + SOS Token + EOS Token= 62, Maximum Learning Rate= 1e-3, weight decay ration for learning rate = 0.05, Maximum phrase length 31+1 Eos Token, Number of frames to resize recording to is 384, Drop out ration was 0.1, Causal Masking is applied, landmarks (Nose 4 landmarks, Lips 41 landmarks, Pose 17 landmark, Eyes 16(R)+16(L)=32 landmarks, Hands 42 landmarks) In Total 42+76+33 = 151 (HAND_NUMS 42, FACE_NUMS 76, POSE_NUMS 33), X/Y/Z used that means we add the depth in this approach, split the data into train size = 66208, and val size = 1000. 
 
 **Conformer Architecture**
 ![Conformer](llustration-of-the-Conformer-encoder-model-architecture-i-Conformer-encoder.png)
+
+## Evaluation
 
 Conformer run was ASL-21 in [Neptune.ai](https://app.neptune.ai/o/ASL-/org/ASL/runs/table?viewId=9aead532-6950-48b8-8705-bf902d065200), it was not that good, because I didn't give that much time to modify the code to work in the best way and to modify the model architecture (change the number of heads, coformer blocks, decoder blocks, change the landmark indicies, remove z, add or remove augmentation techniques), actually there are a lot of reasons behind this or maybe the whole idea of conformer is wrong.
 
