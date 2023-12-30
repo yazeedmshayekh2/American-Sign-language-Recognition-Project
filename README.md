@@ -98,7 +98,7 @@ It tooks like 8 hours to train were the epochs was 100, I tried using Kaggle TPU
 **Note:** If the kaggle TPUs used the number of epochs will increase to 500 and the batch size will encrease as well using this piece of code: 
 if TPU:
 BATCH_SIZE = 25 * strategy.num_replicas_in_sync
-print(BATCH_SIZE)
+print(BATCH_SIZE).
 
 # Data Augmentation and Preprocessing 
 Data Augmentation and Preprocessing was applied as follows:
