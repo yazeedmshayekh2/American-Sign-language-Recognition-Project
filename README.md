@@ -131,9 +131,9 @@ Number of Epochs= 100, BATCH_SIZE = 64, Number of Unique Characters To Predict +
 
 Conformer run was ASL-21 in [Neptune.ai](https://app.neptune.ai/o/ASL-/org/ASL/runs/table?viewId=9aead532-6950-48b8-8705-bf902d065200), it was not that good, because I didn't give that much time to modify the code to work in the best way and to modify the model architecture (change the number of heads, coformer blocks, decoder blocks, change the landmark indicies, remove z, add or remove augmentation techniques), actually there are a lot of reasons behind this or maybe the whole idea of conformer is wrong.
 
-#Conclusion
+# Conclusion
 
-Since there is no time to try these concepts to solve this problem, I think using clever augmentation from the first place solution with GNN, Flash Attention, or ![STMC transformer](https://aclanthology.org/2020.coling-main.525.pdf) will give a better Performance. Try to solve this problem by using the simple solutions and then go deeper with more complex solutions. Thanks a lot if you reach this part. And try to use Supplementary dataset, since the top solutions in this competition used Supplementary dataset and they said it was a useful.
+Since there is no time to try these concepts to solve this problem, I think using clever augmentation from the first place solution with GNN, Flash Attention, or [STMC transformer](https://aclanthology.org/2020.coling-main.525.pdf) will give a better Performance. Try to solve this problem by using the simple solutions and then go deeper with more complex solutions. Thanks a lot if you reach this part. And try to use Supplementary dataset, since the top solutions in this competition used Supplementary dataset and they said it was a useful.
 
 # What Did't Work In the two architectures
 
