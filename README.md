@@ -84,9 +84,23 @@ You can Found more details about statistics about results that we got here: [Nep
 
 # Second One
 
-The model consists of a Lankmark Embbeding + Conformer.
+The model consists of a Lankmark Embbeding + Conformer, 2 layer MLP landmark encoder + 6 layer 384-dim Conformer + 1 layer GRU.
+Total params: 15,892,142
+Trainable params: 15,868,334
+Non-trainable params: 23,808
+It tooks like 8 hours to train were the epochs was 100, I tried using Kaggle TPUs but it didn't so if you how to use them, Note: If the kaggle TPUs used the number of epochs will increase to 500 and the batch size will encrease as well using this piece of code:
+'''python
+if TPU:
+    BATCH_SIZE = 25 * strategy.num_replicas_in_sync
+    print(BATCH_SIZE)
+'''
 
-Data Augmentation was applied.
+Data Augmentation was applied:
+
+
+
+
+Number of Epochs= 100, BATCH_SIZE = 64, Number of Unique Characters To Predict + Pad Token + SOS Token + EOS Token= 62, Maximum Learning Rate= 1e-3, weight decay ration for learning rate = 0.05, Maximum phrase length 31+1 Eos Token, Number of frames to resize recording to is 384, Drop out ration was 0.1, Causal Masking is applied, landmarks (Nose 4 landmarks, Lips 41 landmarks, Pose 17 landmark, Eyes 16(R)+16(L)=32 landmarks, Hands 42 landmarks) In Total 42+76+33 = 151 (HAND_NUMS 42, FACE_NUMS 76, POSE_NUMS 33).
 
 
 
