@@ -1,12 +1,16 @@
 # American-Sign-language-Translation-Into-Text-Project
 
-I am sorry, because There is no time I provide you with Just a Notebook without py files, model, data, config, train, preprocess, postprocess, augmentation, main, and requirements
+I am sorry, because There is no time I provide you with Just a Notebook without py files, model, data, config, train, preprocess, postprocess, augmentation, main, and requirements. I will work on this in the future to provide an update, so don't miss that.
 
 Since Our Problem is to translate videos (sequence of frames) into sentences (sequence of words and characters), which is a seq2seq problem, so we have to use a state-of-art models like [Transformers](https://arxiv.org/abs/1706.03762) which is much better than [LSTM](https://arxiv.org/abs/1909.09586), [CRNN](https://arxiv.org/abs/1909.09586), or [RNN](https://arxiv.org/abs/1808.03314).
 
 **Sign Language Translation**
 
 ![Sign-language-Translation](ASLTRANSLATION.png)
+
+You Can find the data that I worked on here: [Data](https://www.kaggle.com/competitions/asl-fingerspelling/data)
+
+#Related Works
 
 Inference is performed by starting with an SOS token and predicting one character at a time using the previous prediction.
 
@@ -26,9 +30,12 @@ https://www.kaggle.com/code/gusthema/asl-fingerspelling-recognition-w-tensorflow
 
 This man helps me alot: https://www.kaggle.com/competitions/asl-fingerspelling/discussion/411060
 
-There are two approaches that I tried to solve this Problem:
+#Our Solutions
+
+**There are two approaches that I tried to solve this Problem:**
 
 # First One
+
 The processing is as follows:
 
 1) Select dominant hand based on most number of non empty hand frames
