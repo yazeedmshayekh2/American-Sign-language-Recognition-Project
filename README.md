@@ -61,21 +61,25 @@ Tranformer Model 4.887.936 Million Parameters(Embedding+ Landmark Embedding+ Enc
 
 The Evaluation metrices used:
 
-1) Levenshtein Distance:
+1) Levenshtein Distance(Train And Validation):
 
-![Levenshtein Distance](LevenshteinDistance.png)
+![Levenshtein Distance](train_dis.png)
 
-![LevenshteinDistance(Mean)](LevenshteinDistance(Mean).png)
+![LevenshteinDistance(Mean)](train_dis_compare.png)
+
+![Levenshtein Distance](Val_dis.png)
+
+![LevenshteinDistance(Mean)](val_dis_compare.png)
 
 2) Sparse Categorical Crossentropy With Label Smoothing:
 
-![LossHistory](LossHistory.png)
+![LossHistory](loss_val.png)
 
 3) Top1Accuray:
-![LossHistory](TOP1.png)
+![LossHistory](top1acc_val.png)
 
 4) Top5Accuray:
-![LossHistory](TOP5.png)
+![LossHistory](top5acc_val.png)
 
 You can Found more about monitoring the results on this file: [Monitoring_Project_Performance](Monitoring_Project_Performance.docx)
 
