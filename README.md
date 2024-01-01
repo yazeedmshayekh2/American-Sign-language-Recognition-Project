@@ -6,7 +6,7 @@ Since Our Problem is to translate videos (sequence of frames) into sentences (se
 
 **Sign Language Translation**
 
-![Sign-language-Translation](ASLTRANSLATION.png)
+![Sign-language-Translation](Seq2Seq.png)
 
 You Can find the data that I worked on here: [Data](https://www.kaggle.com/competitions/asl-fingerspelling/data)
 
