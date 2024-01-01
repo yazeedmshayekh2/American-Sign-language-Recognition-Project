@@ -76,9 +76,11 @@ The Evaluation metrices used:
 ![LossHistory](loss_val.png)
 
 3) Top1Accuray:
+   
 ![LossHistory](top1acc_val.png)
 
-4) Top5Accuray:
+5) Top5Accuray:
+   
 ![LossHistory](top5acc_val.png)
 
 You can Found more about monitoring the results on this file: [Monitoring_Project_Performance](Monitoring_Project_Performance.docx)
