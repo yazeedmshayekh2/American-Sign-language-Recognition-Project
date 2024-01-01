@@ -96,7 +96,7 @@ ASL-32 is the best and we got it using this architecture, you can Found more det
 
 # Second One
 
-The model consists of a Lankmark Embbeding + Conformer, 2 layer MLP landmark encoder + 6 layer 384-dim Conformer + 1 layer GRU. Total params: 15,892,142 Trainable params: 15,868,334 Non-trainable params: 23,808 It tooks like 7 hours to train were the epochs was 100 but I stop it because the loss didn't improve that much, I tried using Kaggle TPUs but it didn't so if you how to use them, **Note:** If the kaggle TPUs used the number of epochs will increase to 500 and the batch size will encrease as well using this piece of code: 
+The model consists of a Lankmark Embbeding + [Conformer](https://arxiv.org/pdf/2005.08100.pdf), 2 layer MLP landmark encoder + 6 layer 384-dim Conformer + 1 layer GRU. Total params: 15,892,142 Trainable params: 15,868,334 Non-trainable params: 23,808 It tooks like 7 hours to train were the epochs was 100 but I stop it because the loss didn't improve that much, I tried using Kaggle TPUs but it didn't so if you how to use them, **Note:** If the kaggle TPUs used the number of epochs will increase to 500 and the batch size will encrease as well using this piece of code: 
 
         # Increase number of epochs if the Multi GPUs are available
         if strategy.num_replicas_in_sync==2:
