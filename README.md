@@ -90,7 +90,7 @@ ASL-32 is the best and we got it using this architecture, you can Found more det
 
 # Second One
 
-The model consists of a Lankmark Embbeding + Conformer, 2 layer MLP landmark encoder + 6 layer 384-dim Conformer + 1 layer GRU. Total params: 15,892,142 Trainable params: 15,868,334 Non-trainable params: 23,808 It tooks like 8 hours to train were the epochs was 100, I tried using Kaggle TPUs but it didn't so if you how to use them, **Note:** If the kaggle TPUs used the number of epochs will increase to 500 and the batch size will encrease as well using this piece of code: 
+The model consists of a Lankmark Embbeding + Conformer, 2 layer MLP landmark encoder + 6 layer 384-dim Conformer + 1 layer GRU. Total params: 15,892,142 Trainable params: 15,868,334 Non-trainable params: 23,808 It tooks like 7 hours to train were the epochs was 100 but I stop it because the loss didn't improve that much, I tried using Kaggle TPUs but it didn't so if you how to use them, **Note:** If the kaggle TPUs used the number of epochs will increase to 500 and the batch size will encrease as well using this piece of code: 
 
         # Increase number of epochs if the Multi GPUs are available
         if strategy.num_replicas_in_sync==2:
@@ -144,7 +144,7 @@ Number of Epochs= 100, BATCH_SIZE = 64, Number of Unique Characters To Predict +
 
 ## Evaluation
 
-Conformer run was ASL-21 in [Neptune.ai](https://app.neptune.ai/o/ASL-/org/ASL/runs/table?viewId=9aead532-6950-48b8-8705-bf902d065200), it was not that good, because I didn't give that much time to modify the code to work in the best way and to modify the model architecture (change the number of heads, coformer blocks, decoder blocks, change the landmark indicies, remove z, add or remove augmentation techniques), actually there are a lot of reasons behind this or maybe the whole idea of conformer is wrong.
+Conformer run was ASL-27 in [Neptune.ai](https://app.neptune.ai/o/ASL-/org/ASL/runs/table?viewId=9aead532-6950-48b8-8705-bf902d065200), it was not that good, because I didn't give that much time to modify the code to work in the best way and to modify the model architecture (change the number of heads, coformer blocks, decoder blocks, change the landmark indicies, remove z, add or remove augmentation techniques), actually there are a lot of reasons behind this or maybe the whole idea of conformer is wrong.
 
 # Conclusion
 
