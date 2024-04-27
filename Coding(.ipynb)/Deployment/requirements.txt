@@ -1,0 +1,10 @@
+python = 3.8.10
+numpy
+pandas
+tensorflow
+pyarrow
+mediapipe
+matplotlib
+opencv-python
+json
+fastparquet
