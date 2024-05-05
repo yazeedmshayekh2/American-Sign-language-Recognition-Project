@@ -1,0 +1,8 @@
+pandas
+tensorflow
+numpy
+pyarrow
+fastparquet
+opencv-python
+mediapipe
+streamlit
