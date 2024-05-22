@@ -1,6 +1,9 @@
 import streamlit as st
 import os
 from Detection import process_video  # Import the process function
+from Inference import load_relevant_data_subset, TFLiteModel, decoder
+from Model_Architecture import models
+import numpy as np
 
 # Function to save the uploaded video
 def save_uploaded_file(uploaded_file):
@@ -31,8 +34,12 @@ if uploaded_file is not None:
         # Assume 'process_video' is your function to handle the video
         st.write(print(process_video(video_path)))
 
+        tflite_keras_model = TFLiteModel(islr_models=models)
+        relevant_data, data = load_relevant_data_subset('test_case.parquet')
+        demo_output = tflite_keras_model(relevant_data)["outputs"]
+
         # Display the output in a text box
-        st.text_area("Output", 'final_output', height=300)
+        st.text_area("Output", decoder(np.argmax(demo_output.numpy(), axis=-1)), height=300)
     else:
         st.error('Failed to save file.')
 else:

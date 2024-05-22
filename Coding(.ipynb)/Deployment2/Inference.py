@@ -6,6 +6,7 @@ from Model_Architecture import models
 import os
 
 class TFLiteModel(tf.Module):
+
     """
     TensorFlow Lite model that takes input tensors and applies:
         – a preprocessing model
@@ -41,27 +42,32 @@ class TFLiteModel(tf.Module):
 ROWS_PER_FRAME = 543  # number of landmarks per frame
 
 def add_padding(number, target_divisor):
+
     padding = (target_divisor - (number % target_divisor)) % target_divisor
     return number + padding
+
 def load_relevant_data_subset(pq_path):
+
     data_columns = ['x', 'y', 'z']
     data = pd.read_parquet(pq_path, columns=data_columns)
     print("data.shape: ", data.shape)
     n_rows, n_cols = data.shape
     total_elements = n_rows * n_cols
     print('total_elements: ', total_elements)
-    # padding = ((add_padding(total_elements, ROWS_PER_FRAME) - total_elements) // 3)
-    padding = (total_elements % ROWS_PER_FRAME) // 3
+    padding = add_padding(total_elements, ROWS_PER_FRAME) // 3
+    # padding = (total_elements % ROWS_PER_FRAME) // 3
     print('data: ', data)
-    padded_df = data.drop(data.tail(padding).index)
+    # padding_rows = pd.DataFrame(np.nan, index=range(ROWS_PER_FRAME - (padding - n_rows)), columns=data.columns)
+    # padded_df = pd.concat([data, padding_rows], ignore_index=True)
+    padded_df = data.iloc[:-(ROWS_PER_FRAME - (padding - n_rows))]
     print(padded_df, padded_df.shape)
     n_frames = int(len(padded_df) / ROWS_PER_FRAME)
     padded_df = padded_df.values.reshape(n_frames, ROWS_PER_FRAME, len(data_columns))
     return padded_df.astype(np.float32), padded_df
-
 
 tflite_keras_model = TFLiteModel(islr_models=models)
 relevant_data, data = load_relevant_data_subset('test_case.parquet')
 demo_output = tflite_keras_model(relevant_data)["outputs"]
 print(data.shape)
 print(decoder(np.argmax(demo_output.numpy(), axis=-1)))
+

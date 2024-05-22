@@ -147,4 +147,4 @@ def process_video(video_path, detection=False):
     return 'The video has been successfully processed', df_landmarks_reordered
 
 
-process_video('SnapSave.io-WARM -[warmth, heat]-(1080p).mp4', True)
+process_video('Test Videos/YOU HAVE ABBREVIATE NAME.mp4', True)
